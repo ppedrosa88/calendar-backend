@@ -68,9 +68,6 @@ To set up and install the "10-calendar-backend" project, follow these steps usin
    ```bash
    npm install
 
-> [!IMPORTANT]
-> To make it work, you must configure the .env file with the database connection url or even change the port used (4000 is used by default).
-
 3. **Before Running the Project**:
 
    > [!IMPORTANT]

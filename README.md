@@ -90,7 +90,7 @@ To set up and install the "10-calendar-backend" project, follow these steps usin
 
 # API Endpoints Documentation
 
-Below are the API endpoints along with their HTTP methods and corresponding routes for the "10-calendar-backend" application:
+Below are the API endpoints along with their HTTP methods and corresponding routes for the "calendar-backend" application:
 
 **Create User (POST):**
 - Route: `localhost:4000/api/auth/new`

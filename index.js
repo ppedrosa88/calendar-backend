@@ -10,13 +10,24 @@ const app = express()
 dbConnection()
 
 // Configuración CORS
-const corsOptions = {
-    origin: 'https://calendar-app-pied.vercel.app',
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    optionsSuccessStatus: 204, // Algunas solicitudes OPTIONS no requieren un cuerpo de respuesta, esto evita que se muestre un error.
-  };
+// const corsOptions = {
+//     origin: 'https://calendar-app-pied.vercel.app/*',
+//     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+//     optionsSuccessStatus: 204, // Algunas solicitudes OPTIONS no requieren un cuerpo de respuesta, esto evita que se muestre un error.
+//   };
   
-  app.use(cors(corsOptions));
+//   app.use(cors(corsOptions));
+
+// Configurar cabeceras y cors
+
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+  res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
+  next();
+});
+
 
 // Directorio Público
 app.use( express.static('public') )

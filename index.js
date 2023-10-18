@@ -10,7 +10,13 @@ const app = express()
 dbConnection()
 
 // Configuración CORS
-app.use(cors())
+const corsOptions = {
+    origin: 'https://calendar-app-pied.vercel.app',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    optionsSuccessStatus: 204, // Algunas solicitudes OPTIONS no requieren un cuerpo de respuesta, esto evita que se muestre un error.
+  };
+  
+  app.use(cors(corsOptions));
 
 // Directorio Público
 app.use( express.static('public') )
